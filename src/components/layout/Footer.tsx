@@ -1,0 +1,4 @@
+import { Mail, ExternalLink, FileDown } from "lucide-react";
+import { profile } from "@/data/profile";
+import { contact } from "@/data/contact";
+export function Footer() { return <footer className="site-footer"><div className="container-shell"><div><a className="wordmark" href="#home">{profile.name}<span aria-hidden="true">.</span></a><p>{profile.role}</p></div><p className="footer-location">{contact.location}</p><div className="footer-links"><a href={`mailto:${contact.email}`}><Mail size={14} aria-hidden="true" />Email</a>{contact.linkedInUrl && <a href={contact.linkedInUrl} target="_blank" rel="noreferrer noopener"><ExternalLink size={14} aria-hidden="true" />LinkedIn</a>}<a href={contact.resumePath ?? "#contact"} download><FileDown size={14} aria-hidden="true" />Resume</a></div><p className="footer-copy">© 2026 {profile.name}. All rights reserved.</p></div></footer>; }
